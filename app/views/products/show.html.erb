@@ -1,7 +1,13 @@
 <div class="div container">
   <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <h1 class="text-center">The product has been created successfully!</h1>
+    <div class="col-md-6 col-md-offset-3">
+
+      <% if @action == 'created' || @action == 'updated'%>
+        <h1 class="text-center">The product has been <%= @action %> successfully!</h1>
+      <% else %>
+        <h1 class="text-center">The product information is:</h1>
+      <% end %>
+
       <p><strong>Name:</strong> <%= @product.name %></p>
       <p><strong>Reference:</strong> <%= @product.reference %></p>
       <p><strong>Price:</strong> <%= @product.price %></p>
