@@ -1,22 +1,17 @@
 # == Schema Information
 #
-# Table name: products
+# Table name: categories
 #
 #  id          :integer          not null, primary key
 #  name        :string
-#  reference   :string
-#  price       :decimal(, )
-#  quantity    :integer
-#  brand       :string
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  category_id :integer
 #
 
 require 'test_helper'
 
-class ProductTest < ActiveSupport::TestCase
+class CategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
