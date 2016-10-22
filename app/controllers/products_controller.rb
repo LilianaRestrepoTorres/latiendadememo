@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def index
@@ -22,6 +23,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:notice] = 'Product was successfully destroyed.'
+    redirect_to products_path
   end
 
   def show

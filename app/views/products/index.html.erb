@@ -23,7 +23,11 @@
               <td><%= product.brand %></td>
               <td><%= product.description %></td>
               <td><%= product.created_at %></td>
-              <td><%= link_to 'View', product  %></td>
+              <td>
+                <%= link_to 'View', product  %> -
+                <%= link_to 'Edit', edit_product_path(product)  %> -
+                <%= link_to 'Remove', product, method: :delete, data: { confirm: 'Are you sure to delete this product?' }  %>
+              </td>
             </tr>
           <% end %>
         </tbody>
