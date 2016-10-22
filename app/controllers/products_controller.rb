@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
       flash[:notice] = 'The product have been saved'
       redirect_to @product
     else
-      @erros = @product.erros.full_messages
+      @errors = @product.errors
       render :new
     end
   end
