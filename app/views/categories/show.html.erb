@@ -1,0 +1,26 @@
+<div class="div container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <% if @action == 'created' || @action == 'updated'%>
+          <h1 class="text-center">The category has been <%= @action %> successfully!</h1>
+          <% else %>
+          <h1 class="text-center">The category information is:</h1>
+          <% end %>
+        </div>
+
+        <p><strong>Id:</strong> <%= @category.id %></p>
+        <p><strong>Name:</strong> <%= @category.name %></p>
+        <p><strong>Description:</strong> <%= @category.description %></p>
+        <p><strong>Created At:</strong> <%= @category.created_at %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="row">
+      <%= link_to 'New Category', new_category_path, class:'btn btn-primary' %> -
+      <%= link_to 'All Categories', categories_path , class:'btn btn-warning' %>
+    </div>
+  </div>
+</div>
