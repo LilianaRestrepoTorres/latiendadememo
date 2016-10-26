@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'categories/new'
-
-  get 'categories/edit'
-
-  get 'categories/index'
-
-  get 'categories/destroy'
-
-  get 'categories/show'
 
     resources :products
     resources :categories

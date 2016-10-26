@@ -1,39 +1,39 @@
 <div class="div container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
-        <div class="panel-heading"><h2 class="text-center">List of Categories</h2></div>
-          <table class="table table-hover">
-            <thead>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Created At</th>
-              <th>Options</th>
-            </thead>
-            <tbody>
-              <% @categories.each do |category| %>
-                <tr>
-                  <td><%= category.id %></td>
-                  <td><%= category.name %></td>
-                  <td><%= category.description %></td>
-                  <td><%= category.created_at %></td>
-                  <td>
-                    <%= link_to 'View', category, class:'btn btn-primary' %>
-                    <%= link_to 'Edit', edit_category_path(category), class:'btn btn-success' %>
-                    <%= link_to 'Remove', category, class:'btn btn-danger', method: :delete, data: { confirm: 'Are you sure to delete this category?' }  %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
+        <div class="panel-heading">
+          <h2 class="text-center">List of Categories</h2>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Created At</th>
+            <th>Options</th>
+          </thead>
+          <tbody>
+            <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.id %></td>
+              <td><%= category.name %></td>
+              <td><%= category.description %></td>
+              <td><%= category.created_at %></td>
+              <td>
+                <%= link_to 'View', category, class:'btn btn-primary' %>
+                <%= link_to 'Edit', edit_category_path(category), class:'btn btn-success' %>
+                <%= link_to 'Remove', category, class:'btn btn-danger', method: :delete, data: { confirm: 'Are you sure to delete this category?' }  %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2">
       <%= link_to 'New Category', new_category_path , class:'btn btn-primary' %>
     </div>
   </div>
