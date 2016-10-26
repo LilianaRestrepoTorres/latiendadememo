@@ -18,9 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'annotate'
 gem 'bootstrap-sass', '~> 3.3.6'
-
-
-
+#Install gem girm
+gem 'hirb'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
