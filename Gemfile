@@ -16,10 +16,18 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#Install annotate gem -> generate comments to model
 gem 'annotate'
+
+#Install bootstrap responsive framework
 gem 'bootstrap-sass', '~> 3.3.6'
-#Install gem girm
+
+#Install gem hirb -> view table to data for console
 gem 'hirb'
+
+#Install devise gem -> autentication
+gem 'devise'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
