@@ -23,7 +23,7 @@
               <td><%= "#{pending_purchases}" %></td>
               <td><%= Purchase.number_of_purchases(user, 'paid') %></td>
               <td><%= number_to_currency(Purchase.balance(user), unit: '$ ', separator: ",", delimiter: '.', precision: 0) %></td>
-              <td><%= link_to 'Ver perfil', profile_path %></td>
+              <td><%= link_to 'Ver perfil', profile_path(id: user.id) %></td>
             </tr>
           <% end %>
 
