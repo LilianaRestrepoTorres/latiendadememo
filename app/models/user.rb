@@ -26,6 +26,9 @@ class User < ApplicationRecord
 
   after_initialize :set_default_role
 
+  #Associations
+  has_many :purchases, dependent: :destroy
+
   enum role: [ :admin, :client ]
 
   private

@@ -21,6 +21,7 @@
 class Product < ApplicationRecord
   #Associations
   belongs_to :category
+  has_many :purchases, dependent: :destroy
 
   #Paperclip
   has_attached_file :image, styles: { thumb: "242x200#", micro_thumb: "50x50#" }
@@ -31,4 +32,13 @@ class Product < ApplicationRecord
   validates :price, numericality: true
   validates :quantity, numericality: { only_integer: true }
   validates :price, :quantity, numericality: { greater_or_equal_to: 0 }
+
+  def available?
+    self.quantity > 0 ? true : false
+  end
+
+  def update_stock
+    self.quantity -= 1
+    self.save
+  end
 end
