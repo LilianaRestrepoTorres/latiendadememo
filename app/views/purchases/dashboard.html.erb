@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Panel de Administración</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <table class="table table-hover table-condensed">
+        <thead>
+          <th>Usuario</th>
+          <th>Compras pendientes</th>
+          <th>Compras pagadas</th>
+          <th>Saldo</th>
+          <th>Opciones</th>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <% pending_purchases = Purchase.number_of_purchases(user, 'pending') %>
+            <tr class="<%= pending_purchases > 0 ? 'danger' : 'success' %>">
+              <td><%= user.email %></td>
+              <td><%= "#{pending_purchases}" %></td>
+              <td><%= Purchase.number_of_purchases(user, 'paid') %></td>
+              <td><%= number_to_currency(Purchase.balance(user), unit: '$ ', separator: ",", delimiter: '.', precision: 0) %></td>
+              <td><%= link_to 'Ver perfil', profile_path %></td>
+            </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

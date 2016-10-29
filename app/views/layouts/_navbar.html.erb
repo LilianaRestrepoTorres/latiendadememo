@@ -17,6 +17,7 @@
         <ul class="nav navbar-nav">
           <li> <%= link_to 'Productos', products_path %> </li>
           <li> <%= link_to 'Categorías', categories_path %> </li>
+          <li> <%= link_to 'Dashboard', dashboard_path %> </li>
         </ul>
       <% end %>
       <form class="navbar-form navbar-left">
@@ -30,6 +31,9 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email.split('@')[0]%> <span class="caret"></span></a>
             <ul class="dropdown-menu">
+              <li>
+                <%= link_to 'Mi Perfil', profile_path%>
+              </li>
               <li>
                 <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete%>
               </li>

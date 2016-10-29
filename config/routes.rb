@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  root 'pages#home'
+
   resources :products
   resources :categories
   resources :purchases
 
-  root 'pages#home'
+  get 'profile' => 'pages#profile'
+  get 'dashboard' => 'purchases#dashboard'
 end

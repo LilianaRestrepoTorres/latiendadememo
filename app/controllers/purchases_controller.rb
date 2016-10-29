@@ -20,4 +20,8 @@ class PurchasesController < ApplicationController
 
     redirect_to root_path(category_id: product.category_id)
   end
+
+  def dashboard
+    @users = User.all
+  end
 end

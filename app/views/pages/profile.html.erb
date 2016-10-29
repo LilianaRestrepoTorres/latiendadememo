@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Historial de compras</h1>
+      <h2>Usuario: <%= @user.email.split('@')[0] %></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h2>Compras por pagar</h2>
+      <table class="table table-hover table-condensed">
+        <thead>
+          <th class="text-center">Imagen</th>
+          <th class="text-center">Producto</th>
+          <th class="text-center">Precio</th>
+          <th class="text-center">Fecha</th>
+          <th class="text-center">Estado</th>
+        </thead>
+
+        <tbody>
+          <% @pending_purchases.each do |purchase| %>
+          <tr>
+            <td><%= image_tag purchase.product.image.url(:micro_thumb) %></td>
+            <td><%= purchase.product.name %></td>
+            <td><%= purchase.price %></td>
+            <td><%= purchase.created_at.strftime("Comprado el %d de %B de %Y")%></td>
+            <td class="danger"><%= purchase.status.humanize %></td>
+          </tr>
+          <% end %>
+
+          <% @paid_purchases.each do |purchase| %>
+          <tr>
+            <td><%= image_tag purchase.product.image.url(:micro_thumb) %></td>
+            <td><%= purchase.product.name %></td>
+            <td><%= purchase.price %></td>
+            <td><%= purchase.created_at.strftime("Comprado el %d de %B de %Y")%></td>
+            <td class="success"><%= purchase.status.humanize %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
