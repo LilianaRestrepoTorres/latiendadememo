@@ -28,6 +28,8 @@ gem 'hirb'
 #Install devise gem -> autentication
 gem 'devise'
 
+#Install papaerclip gem -asociar imagenes a los modelos
+gem "paperclip", "~> 5.0.0"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
