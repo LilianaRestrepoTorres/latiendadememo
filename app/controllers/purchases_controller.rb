@@ -13,6 +13,9 @@ class PurchasesController < ApplicationController
     # Purchase.create(user_id: user.id, product_id: product.id, price: product.price, status: status)
 
     if product.available? && purchase.save
+      balance = Purchase.balance(current_user)
+      PurchaseNotifierMailer.notify_account_balance(current_user, balance) if balance >10_000
+
       product.update_stock
       flash[:notice] = 'Tu compra ha sido realizada con éxito '
     else
