@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
   get 'profile' => 'pages#profile'
   get 'dashboard' => 'purchases#dashboard'
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end

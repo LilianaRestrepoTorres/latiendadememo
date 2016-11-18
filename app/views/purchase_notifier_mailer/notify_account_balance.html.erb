@@ -1,5 +1,5 @@
-<p>Hola, <strong><%= @user.email %></strong></p>
+<p>Hola, <strong><%= @user.email.split('@')[0] %></strong>!!</p>
 
-<p>Tu crédito en la tienda de memo ha llegado a: <strong><%= @balance %></strong>, es hora de tomarnos un café y saldemos cuentas.</p>
+<p>Tu crédito en la tienda de memo ha llegado a: <strong><%= number_to_currency(@balance, precision: 0) %></strong>, es hora de tomarnos un café y saldemos cuentas.</p>
 
-<p>Saludos de parte de todo el equipo de La Tienda de Memo</p>
+<p>Saludos de parte de todo el equipo de La Tienda de Memo!</p>
