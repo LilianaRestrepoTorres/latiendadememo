@@ -28,6 +28,12 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+                    <!-- /pages_helper -->
+          <li class="<%= balance_status(current_user) %> balance-status" >
+            <%= link_to profile_path do %>
+            Saldo: <%= number_to_currency(Purchase.balance(current_user), precision: 0) %>
+            <% end %>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email.split('@')[0]%> <span class="caret"></span></a>
             <ul class="dropdown-menu">
